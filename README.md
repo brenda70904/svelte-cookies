@@ -1,108 +1,39 @@
-# This repo is no longer maintained. Consider using `npm init vite` and selecting the `svelte` option or — if you want a full-fledged app framework — use [SvelteKit](https://kit.svelte.dev), the official application framework for Svelte.
+# Svelte Good
 
----
+## Research Conducted By: Tyler Bennett and Brenda Jow
 
-# svelte app
+## Overall Score and Comments
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
+Score (Out of 10): 10
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+### General Comments
 
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
+Pros
 
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
+1. Very intuitive. If you are comfortable with Vanilla JS/CSS/HTML you should be right at home with Svelte.
 
+2. Separation of Concerns. Even though all 3 elements are in the same document there is very little mixing of your script, style, and markup. Compare this to React where you can end up using JSX to write HTML in your Javascript, but then use curly braces to type Javascript in your HTML, but then use an object to type CSS in your Javascript, but then use a string template literal to type English into Javascript. Absurd really.
 
-## Get started
+Cons
 
-Install the dependencies...
+1. Ecosystem. You know you've ventured out of the safety of React when you're installing a routing npm package with just 15000 weekly downloads. 
 
-```bash
-cd svelte-app
-npm install
-```
+2. State Management. One advantage of the more opinionated style of React is that there are patterns to fall into. Svelte is less cut and dry.
 
-...then start [Rollup](https://rollupjs.org):
+### Documentation
 
-```bash
-npm run dev
-```
+The documentation was very helpful, particularly that they called out some anti-patterns in some of their documentation.
 
-Navigate to [localhost:8080](http://localhost:8080). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+### Ramp-Up Projections
 
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
+Probably the biggest strength of Svelte is that it is so similar to technologies any web developer should know anyway. Relatively little learning curve.
 
-If you're using [Visual Studio Code](https://code.visualstudio.com/) we recommend installing the official extension [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode). If you are using other editors you may need to install a plugin in order to get syntax highlighting and intellisense.
+### Community Support and Adoption levels
 
-## Building and running in production mode
+Compared to more established frameworks this is clearly an area that Svelte suffers. With React it feels like you're always an npm package away from anything you want to do, but with Svelte you might actually need to solve it yourself.
 
-To create an optimised version of the app:
+### Operating Instructions
 
-```bash
-npm run build
-```
+If someone were to download your repo (above), what steps do they need to take to run the application
 
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
-
-
-## Single-page app mode
-
-By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
-
-If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for *any* path. You can make it so by editing the `"start"` command in package.json:
-
-```js
-"start": "sirv public --single"
-```
-
-## Using TypeScript
-
-This template comes with a script to set up a TypeScript development environment, you can run it immediately after cloning the template with:
-
-```bash
-node scripts/setupTypeScript.js
-```
-
-Or remove the script via:
-
-```bash
-rm scripts/setupTypeScript.js
-```
-
-If you want to use `baseUrl` or `path` aliases within your `tsconfig`, you need to set up `@rollup/plugin-alias` to tell Rollup to resolve the aliases. For more info, see [this StackOverflow question](https://stackoverflow.com/questions/63427935/setup-tsconfig-path-in-svelte).
-
-## Deploying to the web
-
-### With [Vercel](https://vercel.com)
-
-Install `vercel` if you haven't already:
-
-```bash
-npm install -g vercel
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-vercel deploy --name my-project
-```
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
-```
-# svelte-cookies
+`npm start` will start the server.
