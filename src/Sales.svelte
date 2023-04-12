@@ -26,7 +26,8 @@
   function handleSubmit() {
     const newCitySales = hours.map(_ => generateCookies(minCustomersPerHour, maxCustomersPerHour, avgCookiesPerCustomer));
     salesData = [...salesData, { name: cityName, sales: newCitySales }];
-
+    finalTotal = grandTotal();
+    hourlyTotals = hours.map((_, hourIndex) => totalSalesByHour(hourIndex));
 
     cityName = "";
     minCustomersPerHour = "";
@@ -60,6 +61,10 @@
   h1 {
     font-size: 3rem;
     text-align: center;
+    background-color: aquamarine;
+    margin: 0 0 25px 0;
+    padding: .5em;
+
   }
 
   table {
@@ -72,7 +77,10 @@
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
+    cursor: cell;
   }
+
+  th:hover, td:hover {background-color: aquamarine;}
 
   th {
     background-color: #f2f2f2;
@@ -89,12 +97,13 @@
 
   input {
     width: 100%;
-    max-width: 200px;
+    max-width: 300px;
   }
 
   .submit-button {
     background-color: cadetblue;
     cursor: pointer;
+    padding: .25em 1em
   }
 </style>
 
@@ -123,8 +132,8 @@
   <tfoot>
     <tr>
       <th>Total</th>
-      {#each hours as _, i}
-        <td>{totalSalesByHour(i)}</td>
+      {#each hours as hour, i}
+        <td>{hourlyTotals[i]}</td>
       {/each}
       <td>{finalTotal}</td>
     </tr>
